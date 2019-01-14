@@ -18,8 +18,13 @@ class App extends Component {
     $.ajax({
       url: "http://localhost:8080/wheather/brasilia",
       dataType:'json',
-        success: resposta => this.setState({wheatherData:resposta}) 
+        success: ans => this.setState({wheatherData:ans}) 
     });
+  }
+
+  sentForm(event){
+    event.preventDefault();
+    console.log('data test');
   }
 
   
@@ -56,7 +61,7 @@ class App extends Component {
         <div className="content">
               <br/>
               <div className="pure-form pure-form-aligned">
-                <form className="pure-form pure-form-aligned">
+                <form className="pure-form pure-form-aligned" onSubmit="{this.sentForm}" method="post">
                   <div className="pure-control-group">
                     <input id="location" placeholder="What is your location?" type="text" name="nome"   />  
                   </div>
