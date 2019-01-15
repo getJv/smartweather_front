@@ -23,8 +23,8 @@ class App extends Component {
   }
 
   sentForm(event){
-    event.preventDefault();
-    console.log('data test');
+      event.preventDefault();
+    console.log("dados sendo enviados");
   }
 
   
@@ -61,12 +61,12 @@ class App extends Component {
         <div className="content">
               <br/>
               <div className="pure-form pure-form-aligned">
-                <form className="pure-form pure-form-aligned" onSubmit="{this.sentForm}" method="post">
+                <form className="pure-form pure-form-aligned" onSubmit={this.sentForm} method="post">
                   <div className="pure-control-group">
                     <input id="location" placeholder="What is your location?" type="text" name="nome"   />  
                   </div>
                 </form>        
-{console.log(this.state)}
+
                
               </div>  
         </div>
