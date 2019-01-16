@@ -8,7 +8,9 @@ class App extends Component {
   
   constructor(){
     super();
-    this.state = {};
+    this.state = {querySearch:'',location:{}};
+    this.sentForm = this.sentForm.bind(this)
+    this.setQueryString = this.setQueryString.bind(this)
   }
 
   componentWillMount(){
@@ -16,15 +18,21 @@ class App extends Component {
   }
   componentDidMount(){
     $.ajax({
-      url: "http://localhost:8080/wheather/brasilia",
+      url: "http://localhost:8080/weather/brasilia",
       dataType:'json',
-        success: ans => this.setState({wheatherData:ans}) 
+        success: ans => this.setState({wheatherData:ans}),
+        error: err => console.log(err) 
     });
   }
 
   sentForm(event){
       event.preventDefault();
+      //setState(this.state.querySearch) = '';
     console.log("dados sendo enviados");
+  }
+
+  setQueryString(event){
+        this.setState({querySearch:event.target.value})
   }
 
   
@@ -63,11 +71,11 @@ class App extends Component {
               <div className="pure-form pure-form-aligned">
                 <form className="pure-form pure-form-aligned" onSubmit={this.sentForm} method="post">
                   <div className="pure-control-group">
-                    <input id="location" placeholder="What is your location?" type="text" name="nome"   />  
+                    <input id="location" placeholder="What is your location?" type="text" name="nome" value={this.state.querySearch} onChange={this.setQueryString}  />  
                   </div>
                 </form>        
 
-               
+               searching for: {this.state.querySearch}
               </div>  
         </div>
     </div>
