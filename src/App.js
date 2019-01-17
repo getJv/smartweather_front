@@ -3,6 +3,8 @@ import $ from 'jquery';
 import './css/pure-min.css';
 import './css/side-menu.css';
 
+import SearchInputComponent from './components/SearchInputComponent';
+
 
 class App extends Component {
   
@@ -70,9 +72,7 @@ class App extends Component {
               <br/>
               <div className="pure-form pure-form-aligned">
                 <form className="pure-form pure-form-aligned" onSubmit={this.sentForm} method="post">
-                  <div className="pure-control-group">
-                    <input id="location" placeholder="What is your location?" type="text" name="nome" value={this.state.querySearch} onChange={this.setQueryString}  />  
-                  </div>
+                <SearchInputComponent id="location" placeholder="What is your location?" type="text" name="location" value={this.state.querySearch} onChange={this.setQueryString}  />  
                 </form>        
 
                searching for: {this.state.querySearch}
