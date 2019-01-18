@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/pure-min.css';
 import './css/side-menu.css';
-import SearchFormComponent from './components/SearchFormComponent';
+import WeatherBox from './components/MapComponent';
 
 
 
@@ -39,8 +39,8 @@ class App extends Component {
 
                     <div className="content">
                         <br />
-                        <SearchFormComponent />
-                        
+                        <WeatherBox />
+
                     </div>
                 </div>
             </div>
