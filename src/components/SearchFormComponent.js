@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchInputComponent from './SearchInputComponent';
 import $ from 'jquery';
 import PubSub from 'pubsub-js';
+import ErroHandler from './ErroHandler';
 
 const URL_API = "http://localhost:8080/weather/";
 
@@ -22,8 +23,14 @@ export default class SearchFormComponent extends Component {
         $.ajax({
             url: URL_API + this.state.querySearch,
             dataType: 'json',
-            success: newWeatherData => PubSub.publish('newWeatherDataStream', newWeatherData),
-            error: err => console.log(err)
+            success: newWeatherData => {
+               
+               PubSub.publish('newWeatherDataStream', newWeatherData)
+            },
+            error: err => {
+                new ErroHandler().publicaErros(err)
+                //console.log(err)
+            }
         });
     }
 
