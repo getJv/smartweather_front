@@ -14,13 +14,8 @@ export default class SearchInputComponent extends Component{
         return (
             <div className="pure-control-group">
                 <input
-                    required
-                    id={this.props.id}
-                    placeholder={this.props.placeholder}
-                    type={this.props.type}
-                    name={this.props.name}
-                    value={this.props.value}
-                    onChange={this.props.onChange}
+                    required 
+                    {...this.props}
                 />
                 <span className="error">{this.state.errorMessage}</span>
             </div>
