@@ -29,6 +29,9 @@ export default class SearchFormComponent extends Component {
             },
             error: err => {
                 new ErroHandler().error(err.responseJSON)
+            },
+            beforeSend: ()=>{
+                PubSub.publish('cleanerStream', {})
             }
         });
     }

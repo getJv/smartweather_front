@@ -31,6 +31,10 @@ export default class SearchInputComponent extends Component{
 
         PubSub.subscribe('errorValidationStream',function(stream,err){
             this.setState({errorMessage:err.message});
+        }.bind(this));   
+        
+        PubSub.subscribe('cleanerStream',function(stream){
+            this.setState({errorMessage:''});
         }.bind(this));    
         
 

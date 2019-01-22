@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './css/pure-min.css';
 import './css/side-menu.css';
-import WeatherBox from './components/MapComponent';
+import { Link } from 'react-router-dom';
+
+
 
 
 
@@ -19,14 +21,14 @@ class App extends Component {
 
                 <div id="menu">
                     <div className="pure-menu">
-                        <a className="pure-menu-heading" href="http://teste">Menu</a>
+                        <Link className="pure-menu-heading" to="/">Menu</Link>
 
                         <ul className="pure-menu-list">
                             <li className="pure-menu-item menu-item-divided pure-menu-selected">
-                                <a href="http://teste" className="pure-menu-link">Home</a>
+                                <Link to="/" className="pure-menu-link">Home</Link>
                             </li>
 
-                            <li className="pure-menu-item"><a href="http://teste" className="pure-menu-link">About</a></li>
+                            <li className="pure-menu-item"><Link to="/about" className="pure-menu-link">About</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +41,8 @@ class App extends Component {
 
                     <div className="content">
                         <br />
-                        <WeatherBox />
+                        {this.props.children}
+                        
 
                     </div>
                 </div>
