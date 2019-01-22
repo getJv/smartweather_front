@@ -28,8 +28,7 @@ export default class SearchFormComponent extends Component {
                PubSub.publish('newWeatherDataStream', newWeatherData)
             },
             error: err => {
-                new ErroHandler().publicaErros(err)
-                //console.log(err)
+                new ErroHandler().error(err.responseJSON)
             }
         });
     }

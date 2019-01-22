@@ -7,7 +7,7 @@ export default class SearchInputComponent extends Component{
         super();
         this.state = {errorMessage:''};
     }
-
+ 
 
 
     render() {
@@ -29,10 +29,10 @@ export default class SearchInputComponent extends Component{
 
     componentDidMount(){
 
-        PubSub.subscribe('errorValidationStream',(stream,err)=>{
-            this.setState({errorMessage:err.defaultMessage});
-            console.log("componentDidMount from SearchInputComponent"+ this.state.errorMessage);
-        });
+        PubSub.subscribe('errorValidationStream',function(stream,err){
+            this.setState({errorMessage:err.message});
+        }.bind(this));    
+        
 
     }
 

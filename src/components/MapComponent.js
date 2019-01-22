@@ -9,7 +9,7 @@ class MapComponent extends Component {
     render() {
         return (
             <div className="pure-form pure-form-aligned">
-                {console.log("From maps")}{console.log(this.props.locationPoints)}
+               maps component
             </div >
         );
     }
