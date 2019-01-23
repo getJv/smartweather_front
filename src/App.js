@@ -35,8 +35,8 @@ class App extends Component {
 
                 <div id="main">
                     <div className="header">
-                        <h1>Smart Wheather</h1>
-                        <h2>The better way to follow the wheather in your region</h2>
+                        <h1>Smart Weather</h1>
+                        <h2>The better way to check the weather</h2>
                     </div>
 
                     <div className="content">
