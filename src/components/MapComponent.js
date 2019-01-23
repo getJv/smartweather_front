@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import SearchFormComponent from './SearchFormComponent';
-import PubSub from 'pubsub-js';
-
 import Map from 'pigeon-maps'
 import Marker from 'pigeon-marker'
 
-class MapComponent extends Component {
+export default class MapComponent extends Component {
 
    
 
@@ -36,33 +33,4 @@ class MapComponent extends Component {
 
 }
 
-export default class WeatherBox extends Component {
 
-    constructor() {
-        super();
-        this.state = { points:[50.879, 4.6997], wheatherData: {} };
-
-    }
-
-    componentWillMount() {
-        PubSub.subscribe('newWeatherDataStream', (stream, data) => {
-            
-            if(data.location)
-            this.setState({ points: [data.location.lat, data.location.lon], wheatherData: data });
-
-        });
-        
-    }
-
-    render() {
-        return (
-            <div > 
-                <SearchFormComponent />
-                <MapComponent points={this.state.points}  />
-                
-            </div>
-        );
-    }
-
-
-}

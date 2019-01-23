@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import AboutBox from './components/AboutComponent';
-import WeatherBox from './components/MapComponent';
+import WeatherBox from './components/WeatherBoxComponent';
 
 ReactDOM.render(
     <Router>
