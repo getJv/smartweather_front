@@ -50,7 +50,7 @@ export default class SearchFormComponent extends Component {
 
     render() {
         return (
-            <div className="pure-form pure-form-aligned">
+            <div className="pure-u-1">
                 <form className="pure-form pure-form-aligned" onSubmit={this.sentForm} method="post">
                     <SearchInputComponent
                         id="location"

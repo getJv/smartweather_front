@@ -13,7 +13,7 @@ export default class SearchInputComponent extends Component{
     render() {
         return (
             <div className="pure-control-group">
-                <input
+                <input className="pure-input-1"
                     required 
                     {...this.props}
                 />
