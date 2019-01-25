@@ -20,4 +20,4 @@ Use these commands:
 * use this url to get the json weather data: `http://localhost:3000`
 
 !["sample"](https://media.giphy.com/media/31SnCFiNIAKCEaPUyc/giphy.gif)
-Large: https://gph.is/2RPjM5f
+Large: https://gfycat.com/WarlikeFlusteredAntlion
