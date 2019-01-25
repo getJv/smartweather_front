@@ -4,9 +4,9 @@ A React Client to my Elisa test
 ## Technologies
 React, PureCss 
 
-## Frontend repository
+## backend repository
 
-* `https://github.com/getJv/smartweather_server`
+* `https://github.com/getJv/smartweather_server` (important you will need it )
 
 ## How to test it?
 
